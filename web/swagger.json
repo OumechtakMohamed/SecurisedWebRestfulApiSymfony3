@@ -1,0 +1,29 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Proposition de suggestions API",
+        "description": "Proposer des idées de sortie à des utilisateurs en utilisant leurs préférences",
+        "version": "1.0.0"
+    },
+    "host": "rest-api.local",
+    "schemes": [
+        "http"
+    ],
+    "produces": [
+        "application/json",
+        "application/xml"
+    ],
+    "consumes": [
+        "application/json",
+        "application/xml"
+    ],
+    "paths": {
+        
+    },
+    "parameters": {
+         // ...
+    },
+    "definitions": {
+         // ...
+    }
+}

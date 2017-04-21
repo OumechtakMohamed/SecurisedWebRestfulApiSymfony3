@@ -1,0 +1,20 @@
+<VirtualHost *:80>
+    ServerName rest-api.local
+
+    DocumentRoot "c:/wamp/www/pjtt/rest_api/web"   
+
+    <Directory "c:/wamp/www/pjtt/rest_api/web">
+      DirectoryIndex app_dev.php
+      Require all granted
+      AllowOverride None
+
+      RewriteEngine On
+      RewriteCond %{REQUEST_FILENAME} -f
+      RewriteRule ^ - [L]
+      RewriteRule ^ app_dev.php [L]
+    </Directory>
+
+    # Ajuster le chemin vers les fichiers de logs à votre convenance
+    ErrorLog logs/rest-api-error.log 
+    CustomLog logs/rest-api-access.log combined
+</VirtualHost>

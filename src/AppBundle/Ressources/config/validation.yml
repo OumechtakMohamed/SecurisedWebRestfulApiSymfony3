@@ -1,0 +1,47 @@
+AppBundle\Entity\Place:
+    attributes:
+        id:
+            groups: ['place', 'price']
+        name:
+            groups: ['place', 'price']
+        address:
+            groups: ['place', 'price']
+        prices:
+            groups: ['place']
+
+
+AppBundle\Entity\Price:
+    properties:
+        type:
+            - NotNull: ~
+            - Choice:
+                choices: [less_than_12, for_all]
+        value:
+            - NotNull: ~
+            - Type: numeric
+            - GreaterThanOrEqual:
+                value: 0
+            
+AppBundle\Entity\User:
+    attributes:
+        id:
+            groups: ['user', 'preference', 'auth-token']
+        firstname:
+            groups: ['user', 'preference', 'auth-token']
+        lastname:
+            groups: ['user', 'preference', 'auth-token']
+        email:
+            groups: ['user', 'preference', 'auth-token']
+        preferences:
+            groups: ['user']
+
+AppBundle\Entity\AuthToken:
+    attributes:
+        id:
+            groups: ['auth-token']
+        value:
+            groups: ['auth-token']
+        createdAt:
+            groups: ['auth-token']
+        user:
+            groups: ['auth-token']
